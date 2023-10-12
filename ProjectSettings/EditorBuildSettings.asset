@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_scenes/Cargo simulator comp env for terriaN.unity
-    guid: 9a802a1a992e45d4ba9b0ca64331de1b
+    path: Assets/_scenes/Splash.unity
+    guid: b5a3344aa19089c48ac51052f0807ab9
   - enabled: 1
     path: Assets/_scenes/MainMenu.unity
     guid: 2635a0864496b9a45a01f32b9eb683e9
   - enabled: 1
-    path: Assets/_scenes/Splash.unity
-    guid: b5a3344aa19089c48ac51052f0807ab9
+    path: Assets/_scenes/Cargo simulator comp env for terriaN.unity
+    guid: 9a802a1a992e45d4ba9b0ca64331de1b
   m_configObjects: {}
