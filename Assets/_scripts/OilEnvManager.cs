@@ -20,6 +20,10 @@ public class OilEnvManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        foreach(OilLevel i in level)
+        {
+            i.gameObject.SetActive(false);
+        }
     }
 
 
@@ -49,6 +53,7 @@ public class OilEnvManager : MonoBehaviour
         }
 
         //setting the selected truck active and its position to the level starting position
+        level[currentLevel].gameObject.SetActive(true);
         RCC.SpawnRCC(trucks[currentTruck], level[currentLevel].startPoint.position, level[currentLevel].startPoint.rotation, true, true, false);
 
     }
