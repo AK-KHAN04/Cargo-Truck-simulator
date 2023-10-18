@@ -12,7 +12,7 @@ public class OilLevel : MonoBehaviour
 
     public Transform startPoint, EndPoint;
 
-	bool isInitialized = false;
+    bool isInitialized = false;
 
 
     private void Awake()
@@ -21,16 +21,19 @@ public class OilLevel : MonoBehaviour
         navigator = FindObjectOfType<Navigator>();
         map = FindObjectOfType<Map>();
 
-
+        Debug.Log("level");
     }
 
     private void Start()
     {
-        navigator.SetTargetPoint(EndPoint.position);
-        map.ShowAsNavigator();
+        //if (OilEnvManager.instance.currentLevel < 6)
+        
+            navigator.SetTargetPoint(EndPoint.position);
+        
+        // map.ShowAsNavigator();
 
     }
-
+    /*
     void Update()
     {
         if (!isInitialized)
@@ -39,5 +42,5 @@ public class OilLevel : MonoBehaviour
 
             isInitialized = true;
         }
-    }
+    }*/
 }

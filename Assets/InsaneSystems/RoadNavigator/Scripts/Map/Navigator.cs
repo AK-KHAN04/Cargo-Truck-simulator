@@ -31,7 +31,7 @@ namespace InsaneSystems.RoadNavigator
 		// Points used to check: if path for these points already built, do not rebuild it.
 		NavigatorCrossRoadPoint lastNearestPointToCar, lastNearestPointToTarget;
 
-		float timerToNextCheck = 0.5f;
+		float timerToNextCheck = 2.5f;
 		Path currentPath;
 		bool drawLineFromCarToSecondPoint;
 

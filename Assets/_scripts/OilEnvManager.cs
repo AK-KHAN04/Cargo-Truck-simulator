@@ -1,7 +1,9 @@
 using InsaneSystems.RoadNavigator;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OilEnvManager : MonoBehaviour
@@ -20,15 +22,16 @@ public class OilEnvManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        foreach(OilLevel i in level)
-        {
-            i.gameObject.SetActive(false);
-        }
+       
     }
 
 
-    private void Start()
+    public void Start()
     {
+        foreach (OilLevel i in level)
+        {
+            i.gameObject.SetActive(false);
+        }
         //Getting Level Information and setting the level setup for the Environment
         if (PlayerPrefs.HasKey(GameConstants.CURRENT_SELECTED_LEVEL))
         {
@@ -38,6 +41,7 @@ public class OilEnvManager : MonoBehaviour
         else
         {
             currentLevel = 0;
+            Debug.Log("There is no value in the playerPrefs");
         }
         //levelText.text = (currentLevel + 1).ToString();
 
@@ -54,8 +58,33 @@ public class OilEnvManager : MonoBehaviour
 
         //setting the selected truck active and its position to the level starting position
         level[currentLevel].gameObject.SetActive(true);
-        RCC.SpawnRCC(trucks[currentTruck], level[currentLevel].startPoint.position, level[currentLevel].startPoint.rotation, true, true, false);
+        SpawnTruck();
+        
 
+    }
+
+
+    public void NextLevel()
+    {
+        level[currentLevel].gameObject.SetActive(false);
+        FindAnyObjectByType<RCC_CarControllerV3>().gameObject.SetActive(false);
+        currentLevel++;
+        PlayerPrefs.SetInt(GameConstants.CURRENT_SELECTED_LEVEL, currentLevel);
+        level[currentLevel].gameObject.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    public void SpawnTruck()
+    {
+        if (currentLevel == 0)
+        {
+            RCC.SpawnRCC(trucks[currentTruck], level[currentLevel].startPoint.position, level[currentLevel].startPoint.rotation, true, true, false);
+        }
+        else
+        {
+            RCC.SpawnRCC(oilTrucks[currentTruck], level[currentLevel].startPoint.position, level[currentLevel].startPoint.rotation, true, true, false);
+        }
     }
 }
 
