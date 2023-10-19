@@ -70,7 +70,7 @@ public class TruckSelectionManager : MonoBehaviour
         TopBarManager.instance.LoadingPanel.SetActive(true);
         if(PlayerPrefs.GetInt(GameConstants.MODE_SELECTION) == 0)
         {
-            LoadingHandler.instance.SceneToLoad = 3;
+            LoadingHandler.instance.SceneToLoad = 2;
         }
         else
         {

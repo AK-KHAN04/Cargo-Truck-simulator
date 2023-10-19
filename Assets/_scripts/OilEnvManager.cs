@@ -10,6 +10,7 @@ public class OilEnvManager : MonoBehaviour
 {
     public static OilEnvManager instance;
     public Text levelText;
+    public Text instructionText;
 
     public RCC_CarControllerV3[] trucks, oilTrucks;
 
@@ -66,10 +67,12 @@ public class OilEnvManager : MonoBehaviour
 
     public void NextLevel()
     {
+        ShowInstructionPanel("Level is Loading", true);
         level[currentLevel].gameObject.SetActive(false);
         FindAnyObjectByType<RCC_CarControllerV3>().gameObject.SetActive(false);
         currentLevel++;
         PlayerPrefs.SetInt(GameConstants.CURRENT_SELECTED_LEVEL, currentLevel);
+        PlayerPrefs.SetInt(GameConstants.CURRENT_UNLOCKED_LEVEL, currentLevel);
         level[currentLevel].gameObject.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -85,6 +88,21 @@ public class OilEnvManager : MonoBehaviour
         {
             RCC.SpawnRCC(oilTrucks[currentTruck], level[currentLevel].startPoint.position, level[currentLevel].startPoint.rotation, true, true, false);
         }
+    }
+
+    public void ShowInstructionPanel(string text, bool SelfDeactivate)
+    {
+        instructionPanel.SetActive(true);
+        instructionText.text = text;
+        if (SelfDeactivate)
+        {
+            Invoke(nameof(DisableInstructionPanel), 2f);
+        }
+    }
+
+    public void DisableInstructionPanel()
+    {
+        instructionPanel.SetActive(false);
     }
 }
 

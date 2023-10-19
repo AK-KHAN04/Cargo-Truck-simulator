@@ -12,7 +12,7 @@ public class OilLevel : MonoBehaviour
 
     public Transform startPoint, EndPoint;
 
-    bool isInitialized = false;
+    //bool isInitialized = false;
 
 
     private void Awake()

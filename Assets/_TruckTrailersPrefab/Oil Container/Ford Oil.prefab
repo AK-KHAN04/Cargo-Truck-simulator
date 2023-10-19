@@ -2525,7 +2525,7 @@ MonoBehaviour:
   antiRollVertical: 0
   COM: {fileID: 8878594669278328651}
   COMAssister: 0
-  brakeTorque: 20000
+  brakeTorque: 200000
   downForce: 10
   speed: 0
   maxspeed: 140
@@ -2535,23 +2535,23 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1000
       value: 750
-      inSlope: 0.5
-      outSlope: 0.5
+      inSlope: 0.3
+      outSlope: 0.3
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 2500
+      time: 3500
       value: 1500
-      inSlope: 0.125
-      outSlope: 0.125
+      inSlope: 0.025000006
+      outSlope: 0.025000006
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 4500
+      time: 5500
       value: 1000
       inSlope: -0.25
       outSlope: -0.25
@@ -2564,9 +2564,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   autoGenerateEngineRPMCurve: 1
   maxEngineTorque: 1500
-  maxEngineTorqueAtRPM: 2500
+  maxEngineTorqueAtRPM: 3500
   minEngineRPM: 1000
-  maxEngineRPM: 4500
+  maxEngineRPM: 5500
   engineRPM: 0
   engineRPMRaw: 0
   engineInertia: 0.2
