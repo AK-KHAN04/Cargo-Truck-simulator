@@ -44,7 +44,7 @@ public class OilEnvManager : MonoBehaviour
             currentLevel = 0;
             Debug.Log("There is no value in the playerPrefs");
         }
-        //levelText.text = (currentLevel + 1).ToString();
+        levelText.text = (currentLevel + 1).ToString();
 
 
         //setting the truck from playerprefs

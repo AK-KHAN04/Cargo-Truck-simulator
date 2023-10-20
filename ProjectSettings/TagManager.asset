@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - objectCulling
+  - objectcullingSmall
+  - destructibleProp
+  - attach
+  - TrafficLight
   layers:
   - Default
   - TransparentFX
@@ -18,8 +23,8 @@ TagManager:
   - RCC_DetachablePart
   - RCC_Trailer
   - RCC_Crasher
-  - 
-  - 
+  - Road
+  - Traffic
   - 
   - 
   - 

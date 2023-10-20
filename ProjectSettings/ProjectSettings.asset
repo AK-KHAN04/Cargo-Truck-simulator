@@ -718,7 +718,7 @@ PlayerSettings:
     33: BCG_RCC
     4: BCG_RCC
     7: BCG_RCC
-    Android: BCG_RCC
+    Android: BCG_RCC;USE_GLEY_TRAFFIC
     EmbeddedLinux: BCG_RCC
     GameCoreScarlett: BCG_RCC
     GameCoreXboxOne: BCG_RCC
